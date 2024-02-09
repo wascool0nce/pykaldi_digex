@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  pykaldi_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+#    image: pykaldi/pykaldi
+    environment:
+      - PYTHONIOENCODING=utf-8
+#      - PATH=/kaldi/src/featbin:/kaldi/src/ivectorbin:/kaldi/src/online2bin:/kaldi/src/rnnlmbin:/kaldi/src/fstbin:${PATH}
+    volumes:
+      - ./scripts:/app/scripts
+      - ./output:/app/output
+      - ./Speech-to-Text-Russian:/app/models
+      - ./wav_audio:/app/wav_audio
+    command: /bin/bash -c "/app/scripts/install_model.sh"
