@@ -10,7 +10,7 @@ from pathlib import Path
 from tqdm import tqdm
 from multiprocessing import Pool, cpu_count
 from tools import data_preparator, segmenter, recognizer, transcriptions_parser
-from tools.utils import make_ass, delete_folder, make_wav_scp, create_logger, prepare_wav, make_subtitles_data
+from tools.utils import delete_folder, make_wav_scp, create_logger, prepare_wav, make_subtitles_data
 
 
 def start_pipeline(wav):
